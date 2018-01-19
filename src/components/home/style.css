@@ -1,0 +1,14 @@
+.animate {
+  -webkit-transition:  all;
+  transition:  all;
+  -webkit-transition-duration:  0.3s;
+  transition-duration:  0.3s; }
+
+.home-wrap {
+  text-align: center;
+  line-height:  2.66667rem; }
+  .home-wrap button {
+    background: #eee;
+    padding:  0.13333rem 1.33333rem; }
+
+/*# sourceMappingURL=style.css.map */

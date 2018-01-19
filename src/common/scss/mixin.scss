@@ -1,0 +1,211 @@
+$fontSize: 15;
+$borderColor: #eee;
+
+$blueColor: #1dacf9;
+@mixin rem($property, $values...) {
+    $max: length($values);
+    $result: '';
+    $results: '';
+    @for $i from 1 through $max {
+        $remValues: nth($values, $i) / $fontSize * 1rem;
+        $value: nth($values, $i)* 1px;
+        $result: #{$result + " " +$remValues};
+        $results: #{$results + " " +$value};
+    }
+    //#{$property}:$results;
+    #{$property}: $result;
+}
+
+@mixin prefix($property, $values...) {
+    $max: length($values);
+    $result: '';
+    @for $i from 1 through $max {
+        $result: #{$result + " " + nth($values, $i)};
+    }
+    -webkit-#{$property}: $result;
+    //-moz-#{$property}:$result;
+    //-ms-#{$property}:$result;
+    #{$property}: $result;
+}
+
+@mixin size($width, $height) {
+    @include rem(width, $width);
+    @include rem(height, $height);
+}
+
+@mixin left($px) {
+    @include rem(left, $px);
+}
+
+@mixin right($px) {
+    @include rem(right, $px);
+}
+
+@mixin top($px) {
+    @include rem(top, $px);
+}
+
+@mixin bottom($px) {
+    @include rem(bottom, $px);
+}
+
+@mixin pos($top, $left) {
+    @include rem(left, $left);
+    @include rem(top, $top);
+}
+
+@mixin pos2($top, $right) {
+    @include rem(top, $top);
+    @include rem(right, $right);
+}
+
+@mixin pos2($top, $right) {
+    @include rem(top, $top);
+    @include rem(right, $right);
+}
+
+@mixin pos3($bottom, $left) {
+    @include rem(bottom, $bottom);
+    @include rem(left, $left);
+}
+
+@mixin translate($x, $y) {
+    @include prefix(transform, translate($x, $y));
+}
+
+@mixin padding($values...) {
+    @include rem(padding, $values...);
+}
+
+@mixin margin($values...) {
+    @include rem(margin, $values...);
+}
+
+@mixin font-size($values...) {
+    @include rem(font-size, $values...);
+}
+
+@mixin line-height($values...) {
+    @include rem(line-height, $values...);
+}
+
+@mixin border-radius($values...) {
+    @include rem(-webkit-border-radius, $values...);
+    @include rem(border-radius, $values...);
+}
+
+@mixin background-position($values...) {
+    @include rem(background-position, $values...);
+}
+
+@mixin background-position-x($values...) {
+    @include rem(background-position-x, $values...);
+}
+
+@mixin background-position-y($values...) {
+    @include rem(background-position-y, $values...);
+}
+
+@mixin background-size($values...) {
+    @include rem(background-size, $values...);
+}
+
+@mixin margin-right($values) {
+    @include rem(margin-right, $values);
+}
+
+@mixin margin-top($values) {
+    @include rem(margin-top, $values);
+}
+
+@mixin margin-left($values) {
+    @include rem(margin-left, $values);
+}
+
+@mixin margin-bottom($values) {
+    @include rem(margin-bottom, $values);
+}
+
+@mixin padding-bottom($values) {
+    @include rem(padding-bottom, $values);
+}
+
+@mixin padding-left($values) {
+    @include rem(padding-left, $values);
+}
+
+@mixin padding-right($values) {
+    @include rem(padding-right, $values);
+}
+
+@mixin padding-top($values) {
+    @include rem(padding-top, $values);
+}
+
+@mixin min-width($values...) {
+    @include rem(min-width, $values...);
+}
+
+@mixin min-height($values...) {
+    @include rem(min-height, $values...);
+}
+
+@mixin width($values...) {
+    @include rem(width, $values...);
+}
+
+@mixin height($values...) {
+    @include rem(height, $values...);
+}
+
+@mixin max-height($values...) {
+    @include rem(max-height, $values...);
+}
+
+@mixin min-height($values...) {
+    @include rem(min-height, $values...);
+}
+
+@mixin max-width($values...) {
+    @include rem(max-width, $values...);
+}
+
+@mixin border-width($values...) {
+    @include rem(border-width, $values...);
+}
+
+@mixin border-top-width($values...) {
+    @include rem(border-top-width, $values...);
+}
+
+@mixin border-left-width($values...) {
+    @include rem(border-left-width, $values...);
+}
+
+@mixin border-right-width($values...) {
+    @include rem(border-right-width, $values...);
+}
+
+@mixin border-bottom-width($values...) {
+    @include rem(border-bottom-width, $values...);
+}
+
+@mixin min-width($values...) {
+    @include rem(min-width, $values...);
+}
+
+@mixin translateX($x) {
+    @include prefix(transform, translateX($x));
+}
+
+@mixin text-indent($values...) {
+    @include rem(text-indent, $values...);
+}
+
+@mixin translateY($y) {
+    @include prefix(transform, translateY($y));
+}
+.animate {
+    @include prefix(transition, all);
+    @include prefix(transition-duration, .3s);
+}

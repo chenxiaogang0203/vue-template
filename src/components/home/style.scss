@@ -1,0 +1,11 @@
+@import "../../common/scss/mixin";
+
+.home-wrap {
+    text-align: center;
+    @include line-height(40);
+    button {
+        background: #eee;
+        @include padding(2, 20);
+    }
+}
+
